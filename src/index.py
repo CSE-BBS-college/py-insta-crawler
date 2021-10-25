@@ -27,7 +27,7 @@ async def main(url):
     page_title = await page.title()
     title = page_title.split('on')[0] 
     name_of_file = f"{title.title().rstrip()}-{get_random_string()}"
-    file_name = os.path.join(os.path.expanduser('~'),'Videos', name_of_file+".mp4") 
+    file_name = os.path.join(os.path.expanduser('~'), 'Videos', name_of_file+".mp4")
    
     print(file_name)
     # await page.screenshot({'path': 'example.png'})
@@ -49,5 +49,6 @@ async def main(url):
     print(f"\n Downloaded file:{file_name}")
       
     await browser.close()
+    exit()
 
 asyncio.get_event_loop().run_until_complete(main(link))
